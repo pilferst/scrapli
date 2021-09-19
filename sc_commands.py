@@ -36,9 +36,7 @@ class Router_l2vpn:
             self.router_1, self.router_1_config, self.router_2, self.router_2_config
         )
 
-        self._configuration_l2vpns(
-            router_1, router_1_config, router_2, router_2_config
-        )
+        self._configuration_l2vpns(router_1, router_1_config, router_2, router_2_config)
 
     def _open_connection(self, router: Dict[str, Union[str, int, bool]]):
         """
@@ -238,6 +236,7 @@ class Router_l2vpn:
 
         ssh.close()
         LOGGER.info(f"L2vpn xconnect {router_config_main[2]} was created")
+
 
 if __name__ == "__main__":
     r = Router_l2vpn(router_1, router_1_config, router_2, router_2_config)
